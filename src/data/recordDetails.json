@@ -1,0 +1,51 @@
+{
+  "REC001": {
+    "general_data": {
+      "full_name": {
+        "value": "John Doe",
+        "selector": "#txtFullName"
+      },
+
+      "birth_date": {
+        "value": "1995-02-10",
+        "selector": "#txtDOB"
+      },
+
+      "rfc": {
+        "value": "DOE123456",
+        "selector": "#txtRFC"
+      },
+
+      "curp": {
+        "value": "CURP123456",
+        "selector": "#txtCURP"
+      }
+    },
+
+    "tax_data": {
+      "fiscal_registration_number": {
+        "value": "GST12345",
+        "selector": "#txtFiscalReg"
+      },
+
+      "company_name": {
+        "value": "ABC Pvt Ltd",
+        "selector": "#txtCompanyName"
+      }
+    },
+
+    "official_identification": [
+      {
+        "type_of_identification": {
+          "value": "Passport",
+          "selector": "#ddlIDType"
+        },
+
+        "identification_number": {
+          "value": "P1234567",
+          "selector": "#txtIDNumber"
+        }
+      }
+    ]
+  }
+}

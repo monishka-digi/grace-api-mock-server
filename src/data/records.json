@@ -1,0 +1,12 @@
+[
+  {
+    "id": "REC001",
+    "name": "Property Transfer",
+    "status": "draft"
+  },
+  {
+    "id": "REC002",
+    "name": "Loan Agreement",
+    "status": "completed"
+  }
+]
