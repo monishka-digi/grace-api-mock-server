@@ -6,12 +6,20 @@ const authMiddleware =
   require("../middleware/authMiddleware");
 
 const {
+  register,
   getAccountMe,
   refreshAccessToken
 } = require("../controllers/authController");
 
 
-// LOGIN
+// REGISTER
+router.post(
+  "/register",
+  register
+);
+
+
+// ACCOUNT ME
 router.get(
   "/account-me",
   authMiddleware,

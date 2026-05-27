@@ -10,9 +10,42 @@ servers:
 
 paths:
 
+  /register:
+    post:
+      summary: Register user
+      tags:
+        - Auth
+
+      requestBody:
+        required: true
+
+        content:
+          application/json:
+            schema:
+              type: object
+
+              properties:
+                name:
+                  type: string
+
+                email:
+                  type: string
+
+                password:
+                  type: string
+
+                role:
+                  type: string
+
+      responses:
+        201:
+          description: User registered successfully
+
+
   /account-me:
     get:
       summary: Validate API credentials and get logged in user
+
       parameters:
         - in: header
           name: provider-id
@@ -28,6 +61,12 @@ paths:
 
         - in: header
           name: api-key
+          required: true
+          schema:
+            type: string
+
+        - in: header
+          name: email
           required: true
           schema:
             type: string
@@ -52,6 +91,7 @@ paths:
   /records/{idRecord}/data:
     get:
       summary: Get detailed record data
+
       parameters:
         - in: path
           name: idRecord
@@ -60,7 +100,7 @@ paths:
             type: string
 
       security:
-          - bearerAuth: []
+        - bearerAuth: []
 
       responses:
         200:
@@ -73,8 +113,10 @@ paths:
   /records/{idRecord}/final:
     get:
       summary: Get AI generated deed preview URL
+
       security:
-            - bearerAuth: []
+        - bearerAuth: []
+
       parameters:
         - in: path
           name: idRecord
@@ -110,11 +152,12 @@ paths:
                   type: array
 
       security:
-          - bearerAuth: []
+        - bearerAuth: []
 
       responses:
         201:
           description: Record data submitted successfully
+
 
 components:
   securitySchemes:
@@ -122,4 +165,3 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
-

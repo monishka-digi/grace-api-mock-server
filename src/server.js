@@ -1,6 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const path = require("path");
+
+dotenv.config({
+  path: path.resolve(__dirname, "../.env")
+});
 
 const loggerMiddleware = require("./middleware/loggerMiddleware");
 const errorMiddleware = require("./middleware/errorMiddleware");
@@ -10,8 +15,6 @@ const recordsRoutes = require("./routes/recordsRoutes");
 
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
-
-dotenv.config();
 
 const app = express();
 
